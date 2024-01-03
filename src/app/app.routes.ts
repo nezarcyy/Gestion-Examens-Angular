@@ -21,7 +21,6 @@ import { AddNewFilireComponent } from './components/add/add-new-filire/add-new-f
 import { GestionFiliereComponent } from './components/gestion/gestion-filiere/gestion-filiere.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddNewProfComponent } from './components/add/add-new-prof/add-new-prof.component';
-import { LoginComponent } from './components/widgets/login/login.component';
 
 export const routes: Routes = [
     { path :'' , component: HomeComponent},
@@ -45,7 +44,6 @@ export const routes: Routes = [
       { path :'classes/edit' , component: EditClasseComponent},
       { path :'profile/edit' , component: EditProfileComponent},
       { path :'nonDesponibles' , component: NonDisponibleComponent},
-      { path :'login' , component: LoginComponent},
       // not-found
       { path :'**' , component: NotFoundComponent},
 ];
