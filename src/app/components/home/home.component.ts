@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
+  prof!: boolean;
+
+  constructor(private cookieService: CookieService) {
+  }
+  ngOnInit() {
+    this.prof = (this.cookieService.get('role') == 'Ensignant')? true : false; 
+
+  }
 }
