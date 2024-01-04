@@ -14,8 +14,8 @@ export class ActionsService {
     const formData = new FormData();
     formData.append('file', file);
     console.log(formData.get('file'));
-    
-    
+
+
     return this.http.post(environment.backendHost + '/data/import', formData);
   }
   public exportFile(): Observable<Blob> {

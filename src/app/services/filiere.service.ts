@@ -10,6 +10,7 @@ import { PageFiliere } from '../models/profPage.models';
 })
 export class FiliereService {
 
+
    constructor(private http:HttpClient) { }
   public getAllFilieres(): Observable<Filiere[]> {
     return this.http.get<Filiere[]>(`${environment.backendHost}/filieres/all`);
