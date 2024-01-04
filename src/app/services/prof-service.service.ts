@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prof } from '../models/prof.models';
-import { environment } from '../../environments/environment';
 import { PageProf } from '../models/profPage.models';
 
 @Injectable({
