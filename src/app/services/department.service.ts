@@ -14,29 +14,29 @@ export class DepartmentService {
   constructor(private http: HttpClient) { }
 
   public searchDepartments(keyword: string, page: number, size: number): Observable<PageDepartment> {
-    return this.http.get<PageDepartment>(`${environment.backendHost}/departements/search?keyword=${keyword}&page=${page}&size=${size}`);
+    return this.http.get<PageDepartment>(`http://localhost:2324/api/departements/search?keyword=${keyword}&page=${page}&size=${size}`);
   }
 
   public saveDepartment(department: Departement): Observable<Departement> {
-    return this.http.post<Departement>(`${environment.backendHost}/departements`, department);
+    return this.http.post<Departement>(`http://localhost:2324/api/departements`, department);
   }
 
   public updateDepartment(id: number, department: Departement): Observable<Departement> {
-    return this.http.put<Departement>(`${environment.backendHost}/departements/${id}`, department);
+    return this.http.put<Departement>(`http://localhost:2324/api/departements/${id}`, department);
   }
 
   public getDepartment(id: number): Observable<Departement> {
-    return this.http.get<Departement>(`${environment.backendHost}/departements/${id}`);
+    return this.http.get<Departement>(`http://localhost:2324/api/departements/${id}`);
   }
   public getDepartements(): Observable<Departement[]> {
-    return this.http.get<Departement[]>(`${environment.backendHost}/departements`);
+    return this.http.get<Departement[]>(`http://localhost:2324/api/departements`);
   }
 
   public deleteDepartment(id: number): Observable<any> {
-    return this.http.delete(`${environment.backendHost}/departements/${id}`);
+    return this.http.delete(`http://localhost:2324/api/departements/${id}`);
   }
 
   public getFilieres(id: number): Observable<Filiere[]> {
-    return this.http.get<Filiere[]>(`${environment.backendHost}/departements/${id}/filieres`);
+    return this.http.get<Filiere[]>(`http://localhost:2324/api/departements/${id}/filieres`);
   }
 }

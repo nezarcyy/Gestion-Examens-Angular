@@ -19,7 +19,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     const loginData = { username, password };
-    return this.http.post<any>(environment.backendHost +'/auth/login', loginData);
+    return this.http.post<any>("http://localhost:2324/api" +'/auth/login', loginData);
   }
 
   logout(id:number): Observable<boolean> {
@@ -28,7 +28,7 @@ export class AuthService {
 this.cookieService.delete('userId');
 // Remove more cookies if needed
 
-    return this.http.get<boolean>(environment.backendHost +'/auth/logout/'+id)
+    return this.http.get<boolean>("http://localhost:2324/api" +'/auth/logout/'+id)
     }
 
 }

@@ -13,24 +13,24 @@ export class ClasseService {
    constructor(private http:HttpClient) { }
 
    public getClasses(page: number, size: number): Observable<PageClasse> {
-    return this.http.get<PageClasse>(environment.backendHost + "/classes?page=" + page + "&size=" + size);
+    return this.http.get<PageClasse>("http://localhost:2324/api" + "/classes?page=" + page + "&size=" + size);
   }
   public searchClassesSem(keyword : string, sem:number,page: number, size: number):Observable<PageClasse>{
-    return this.http.get<PageClasse>(environment.backendHost+"/classes/searchSem?keyword="+keyword+"&page=" + page + "&size=" + size+"&sem="+sem)
+    return this.http.get<PageClasse>("http://localhost:2324/api" + "/classes/searchSem?keyword="+keyword+"&page=" + page + "&size=" + size+"&sem="+sem)
   }
   public searchClasses(keyword : string, page: number, size: number):Observable<PageClasse>{
-    return this.http.get<PageClasse>(environment.backendHost+"/classes/search?keyword="+keyword+"&page=" + page + "&size=" + size)
+    return this.http.get<PageClasse>("http://localhost:2324/api" + "/classes/search?keyword="+keyword+"&page=" + page + "&size=" + size)
   }
   public saveClasse(Classe: Classe):Observable<Classe>{
-    return this.http.post<Classe>(environment.backendHost+"/classes",Classe);
+    return this.http.post<Classe>("http://localhost:2324/api" + "/classes",Classe);
   }
   public updateClasse(id: number,Classe: Classe):Observable<Classe>{
-    return this.http.put<Classe>(`${environment.backendHost}/classes/${id}`,Classe);
+    return this.http.put<Classe>(`http://localhost:2324/api/classes/${id}`,Classe);
   }
   public getClasse(id: number):Observable<Classe>{
-    return this.http.get<Classe>(environment.backendHost+"/classes/"+id);
+    return this.http.get<Classe>("http://localhost:2324/api" + "/classes/"+id);
   }
   public deleteClasse(id: number): Observable<any>{
-    return this.http.delete(environment.backendHost+"/classes/"+id);
+    return this.http.delete("http://localhost:2324/api" + "/classes/"+id);
   }
 }

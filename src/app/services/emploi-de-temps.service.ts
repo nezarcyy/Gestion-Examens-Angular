@@ -13,12 +13,12 @@ export class EmploiDeTempsService {
   constructor(private http:HttpClient) { }
 
   public getEmplois(): Observable<ElementDeModule[]> {
-    return this.http.get<ElementDeModule[]>(environment.backendHost + "/elementModules");
+    return this.http.get<ElementDeModule[]>("http://localhost:2324/api" + "/elementModules");
   }
   getEmploiByProf(idProf: number) {
-    return this.http.get<ElementDeModule[]>(environment.backendHost + "/emploisDeTemps/prof/" + idProf);
+    return this.http.get<ElementDeModule[]>("http://localhost:2324/api" + "/emploisDeTemps/prof/" + idProf);
   }
    getEmploisByClasse(classeId: number) {
-    return this.http.get<ElementDeModule[]>(environment.backendHost + "/emploisDeTemps/" + classeId);
+    return this.http.get<ElementDeModule[]>("http://localhost:2324/api" + "/emploisDeTemps/" + classeId);
   }
 }
