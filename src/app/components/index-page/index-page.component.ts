@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './index-page.component.html',
   styleUrl: './index-page.component.css'
 })
-export class IndexPageComponent {
 
+export class IndexPageComponent {
+  login:boolean = false;
+
+  constructor() { }
+  handleConnected() {
+    this.login = true;
+  }
 }
